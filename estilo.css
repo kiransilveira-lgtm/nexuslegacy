@@ -1,0 +1,40 @@
+body {
+    margin: 2,5 px;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* preto */
+    color: #fff;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #111;
+}
+
+header h1 {
+    color: orange;
+}
+nav {
+     padding: center;
+     color orange;
+     font-family:arial;
+
+}
+imagemMetezey {
+    padding: center;
+    background:
+}
+
+/* BANNER */
+.banner {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(black, #111);
+}
+
+.banner h2 {
+    color: orange;
+    font-size: 40px;
+}
