@@ -1,7 +1,7 @@
 body {
-    margin: 2,5 px;
+    margin: 2.5 px; /* ponto não vírgula*/
     font-family: Arial, sans-serif;
-    background-color: #ffffff; /* preto */
+    background-color: #000; /* preto */
     color: #fff;
 }
 
@@ -9,6 +9,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Se alinha os itens verticalmente */
     padding: 20px;
     background-color: #111;
 }
@@ -17,12 +18,13 @@ header h1 {
     color: orange;
 }
 nav {
-     padding: center;
-     color orange;
+     text-align: center; /* Corrigido de padding: center */
+     color: orange; /* Adiciona os dois pontos */
      font-family:arial;
 
 }
-imagemMetezey {
+.imagemMetezey {  /* Adiciona o ponto assumindo que é uma classe */
+    display: block;
     padding: center;
     background:
 }
@@ -31,7 +33,7 @@ imagemMetezey {
 .banner {
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(black, #111);
+    background: linear-gradient(#000,#111);
 }
 
 .banner h2 {
