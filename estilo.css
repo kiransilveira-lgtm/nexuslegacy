@@ -1,40 +1,140 @@
-body {
-    margin: 2,5 px;
-    font-family: Arial, sans-serif;
-    background-color: #ffffff; /* preto */
-    color: #fff;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@300;400&display=swap');
+
+:root {
+    --laranja-principal: #FF8C00;
+    --vermelho-principal: #D32F2F;
+    --preto-fundo: #0A0A0A;
+    --texto-claro: #F4F4F4;
+    --cinza-cartao: #1A1A1A;
 }
 
-/* HEADER */
-header {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--preto-fundo);
+    color: var(--texto-claro);
+    line-height: 1.6;
+}
+
+/* --- BARRA DE NAVEGAÇÃO --- */
+.barra-navegacao {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #111;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid var(--vermelho-principal);
 }
 
-header h1 {
-    color: orange;
-}
-nav {
-     padding: center;
-     color orange;
-     font-family:arial;
-
-}
-imagemMetezey {
-    padding: center;
-    background:
+.logotipo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-/* BANNER */
-.banner {
+.logotipo span {
+    color: var(--laranja-principal);
+}
+
+.barra-navegacao ul {
+    display: flex;
+    list-style: none;
+}
+
+.barra-navegacao ul li {
+    margin-left: 30px;
+}
+
+.barra-navegacao ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.botao-menu {
+    background: var(--vermelho-principal);
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+/* --- BANNER PRINCIPAL --- */
+.banner-principal {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(black, #111);
+    padding: 0 20px;
 }
 
-.banner h2 {
-    color: orange;
-    font-size: 40px;
+.banner-principal h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.destaque {
+    color: var(--laranja-principal);
+    text-shadow: 2px 2px var(--vermelho-principal);
+}
+
+/* --- BOTOES --- */
+.botao-primario, .botao-secundario {
+    display: inline-block;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+.botao-primario {
+    background-color: var(--laranja-principal);
+    color: black;
+}
+
+.botao-secundario {
+    border: 2px solid var(--vermelho-principal);
+    color: white;
+}
+
+/* --- SERVIÇOS --- */
+.nossos-servicos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 50px 8%;
+}
+
+.cartao-servico {
+    background-color: var(--cinza-cartao);
+    padding: 30px;
+    width: 300px;
+    border-left: 5px solid var(--laranja-principal);
+}
+
+.cartao-servico h3 {
+    color: var(--laranja-principal);
+    margin-bottom: 15px;
+    font-family: 'Oswald', sans-serif;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #000;
+    color: #555;
 }
