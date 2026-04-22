@@ -286,24 +286,24 @@ footer {
     --border: #333;
 }
 
-/* Ajuste do corpo para não quebrar o cabeçalho */
+
 body {
-    font-family: 'Oswald', sans-serif; /* Usando a fonte do seu site */
+    font-family: 'Oswald', sans-serif; 
     background-color: var(--bg);
     color: var(--text);
     margin: 0;
     padding: 0;
 }
 
-/* Container para centralizar apenas o formulário, não a página toda */
+
 .card {
     background: var(--card-bg);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     max-width: 600px;
-    width: 90%; /* Responsivo para celular */
-    margin: 50px auto; /* Centraliza o quadrado e dá distância do topo */
+    width: 90%; 
+    margin: 50px auto; 
 }
 
 h2 { text-align: center; color: var(--primary); text-transform: uppercase; }
@@ -376,6 +376,41 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background: #e67a00;
     transform: translateY(-2px);
+}
+/* --- POPAP DE CONCLUIR CADASTRO */
+.modal-oculto {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Caixa branca da mensagem */
+.modal-conteudo {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    border: 2px solid #000; /* Borda simples preta */
+}
+
+/* Botão de fechar */
+.modal-conteudo button {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 /* --- HISTÓRIA FISICULTURISMO --- */
