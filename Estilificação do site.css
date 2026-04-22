@@ -1,0 +1,470 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@300;400&display=swap');
+
+:root {
+    --laranja-principal: #FF8C00;
+    --vermelho-principal: #D32F2F;
+    --preto-fundo: #0A0A0A;
+    --texto-claro: #F4F4F4;
+    --cinza-cartao: #1A1A1A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--preto-fundo);
+    color: var(--texto-claro);
+    line-height: 1.6;
+}
+
+/* --- BARRA DE NAVEGAÇÃO --- */
+.barra-navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid var(--vermelho-principal);
+}
+
+.logotipo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logotipo span {
+    color: var(--laranja-principal);
+}
+
+.barra-navegacao ul {
+    display: flex;
+    list-style: none;
+}
+
+.barra-navegacao ul li {
+    margin-left: 30px;
+}
+
+.barra-navegacao ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+.barra-navegacao:hover ul li a{
+    transform: scale(0.8);
+    cursor:pointer;
+}
+
+.botao-menu {
+    background: var(--vermelho-principal);
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+/* --- BANNER PRINCIPAL --- */
+.banner-principal {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('assets/images/jpg/fotomainsite.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.banner-principal h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.destaque {
+    color: var(--laranja-principal);
+    text-shadow: 2px 2px var(--vermelho-principal);
+}
+
+/* --- BOTOES --- */
+.botao-primario, .botao-secundario {
+    display: inline-block;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+.botao-primario {
+    background-color: var(--laranja-principal);
+    color: black;
+}
+.botao-primario:hover{
+    background-color: var(--vermelho-principal);
+    color:white;
+    transform:scale(1.2);
+    cursor:pointer;
+}
+
+.botao-secundario {
+    border: 2px solid var(--vermelho-principal);
+    color: white;
+}
+.botao-secundario:hover{
+    background-color: var(--laranja-principal) ;
+    color:black;
+    transform:scale(1.2);
+    cursor:pointer;
+}
+
+/* --- SERVIÇOS --- */
+.nossos-servicos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 50px 8%;
+}
+
+.cartao-servico {
+    background-color: var(--cinza-cartao);
+    padding: 30px;
+    width: 300px;
+    border-left: 5px solid var(--laranja-principal);
+}
+
+.cartao-servico h3 {
+    color: var(--laranja-principal);
+    margin-bottom: 15px;
+    font-family: 'Oswald', sans-serif;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #000;
+    color: #555;
+}
+
+/* ---TREINAMENTO HTML --- */
+
+/* --- Historia da academia --- */
+.secao-historia {
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    background-color: var(--preto-fundo); /* Mantendo seu fundo original */
+}
+
+.container-historia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.texto-historia h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.imagem-espaco img {
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid var(--laranja-principal); /* Usando sua variável */
+}
+
+/* --- ORIENTAÇÃO DE TREINO --- */
+
+.orientacao-compacta {
+    text-align: center; /* Alinha com o título principal */
+    margin-bottom: 40px; /* Dá espaço para os cards de treino */
+}
+
+.subtitulo-legado {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    color: var(--texto-claro);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.metodo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    color: var(--laranja-principal); /* Cor de destaque da sua academia */
+    font-weight: 300;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+/* --- SEÇÃO DETALHADA DE TREINOS --- */
+.secao-treinos-detalhada {
+    padding: 60px 8%;
+    background-color: var(--preto-fundo);
+}
+
+.grupo-muscular {
+    margin-bottom: 50px;
+}
+
+.nome-grupo {
+    font-family: 'Oswald', sans-serif;
+    color: var(--texto-claro);
+    border-left: 5px solid var(--laranja-principal);
+    padding-left: 15px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* Grid de 4 quadrados */
+.grid-exercicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card-exercicio {
+    position: relative;
+    height: 250px;
+    background-color: var(--cinza-cartao);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-exercicio:hover {
+    transform: scale(1.05);
+    border-color: var(--laranja-principal);
+}
+
+.card-exercicio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem preencher o quadrado sem distorcer */
+    filter: grayscale(50%); /* Deixa um estilo mais "dark" */
+    transition: 0.3s;
+}
+
+.card-exercicio:hover img {
+    filter: grayscale(0%);
+}
+
+.info-ex {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    text-align: center;
+}
+
+.info-ex h4 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--laranja-principal);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* ---MATRICULE-SE --- */
+:root {
+    --primary: #ff8800;
+    --bg: #121212;
+    --card-bg: #1e1e1e;
+    --text: #ffffff;
+    --border: #333;
+}
+
+/* Ajuste do corpo para não quebrar o cabeçalho */
+body {
+    font-family: 'Oswald', sans-serif; /* Usando a fonte do seu site */
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+}
+
+/* Container para centralizar apenas o formulário, não a página toda */
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 600px;
+    width: 90%; /* Responsivo para celular */
+    margin: 50px auto; /* Centraliza o quadrado e dá distância do topo */
+}
+
+h2 { text-align: center; color: var(--primary); text-transform: uppercase; }
+
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+legend { color: var(--primary); padding: 0 10px; font-weight: bold; text-transform: uppercase;}
+
+.campo { margin-bottom: 15px; display: flex; flex-direction: column; }
+.campo label { margin-bottom: 5px; font-size: 0.9rem; }
+
+input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    background: #2a2a2a;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+}
+
+input:focus { border-color: var(--primary); }
+
+.container-planos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.card-plano input[type="radio"] { display: none; }
+
+.card-conteudo {
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+    height: 100%;
+}
+
+.card-conteudo h1 { font-size: 1.5rem; margin: 5px 0; }
+.card-conteudo ul { padding: 0; list-style: none; font-size: 0.8rem; text-align: left; }
+
+.card-plano input[type="radio"]:checked + .card-conteudo {
+    border-color: var(--primary);
+    background: rgba(255, 136, 0, 0.1);
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary);
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+    color: #000;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background: #e67a00;
+    transform: translateY(-2px);
+}
+
+/* --- HISTÓRIA FISICULTURISMO --- */
+.conteudo-historia {
+    padding: 100px 8% 50px;
+    background-color: #0A0A0A;
+}
+
+.texto-principal {
+    max-width: 800px;
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.texto-principal h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.texto-principal p {
+    color: #ccc;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* --- GRID DE ATLETAS --- */
+.melhores-do-mundo {
+    text-align: center;
+}
+
+.melhores-do-mundo h2 {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 40px;
+}
+
+.grid-atletas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.card-atleta {
+    position: relative;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #333;
+    transition: 0.4s ease;
+}
+
+.card-atleta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: 0.5s;
+}
+
+.card-atleta:hover {
+    border-color: var(--laranja-principal);
+    transform: translateY(-10px);
+}
+
+.card-atleta:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.info-atleta {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    text-align: left;
+}
+
+.info-atleta h3 {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    margin: 0;
+}
+
+.info-atleta p {
+    color: var(--laranja-principal);
+    font-weight: bold;
+    margin-top: 5px;
+}
