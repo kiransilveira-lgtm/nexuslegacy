@@ -157,22 +157,21 @@ footer {
 /*--- ICONE DO SITE CANTO---*/
 
 .link-fixo {
-    position: fixed;   /* Faz com que ela fique parada na tela mesmo ao rolar */
-    bottom: 20px;      /* Distância de 20px do fundo */
-    right: 20px;       /* Distância de 20px da direita */
-    z-index: 9999;     /* Garante que fique acima de tudo */
-    transition: transform 0.3s ease; /* Suaviza o efeito de hover */
+    position: fixed;   
+    bottom: 20px;     
+    right: 20px;       
+    z-index: 9999;     
 }
 
 .link-fixo img {
-    width: 60px;       /* Ajuste o tamanho do ícone aqui */
+    width: 60px;       
     height: auto;
-    border-radius: 50%; /* Opcional: deixa o ícone redondo se for quadrado */
-    filter: drop-shadow(2px 4px 6px black); /* Dá um destaque contra o fundo escuro */
+    border-radius: 50%; 
 }
 
 .link-fixo:hover {
-    transform: scale(1.1); /* Dá um leve zoom quando passa o mouse */
+    cursor:pointer;
+    transform: scale(1.2); 
 }
 
 
