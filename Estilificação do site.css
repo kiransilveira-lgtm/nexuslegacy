@@ -155,18 +155,25 @@ footer {
     color: #555;
 }
 /*--- ICONE DO SITE CANTO---*/
-.container-pai {
-    position: relative; 
-    min-height: 300px;
-    border: 1px solid #ccc;
+
+.link-fixo {
+    position: fixed;   /* Faz com que ela fique parada na tela mesmo ao rolar */
+    bottom: 20px;      /* Distância de 20px do fundo */
+    right: 20px;       /* Distância de 20px da direita */
+    z-index: 9999;     /* Garante que fique acima de tudo */
+    transition: transform 0.3s ease; /* Suaviza o efeito de hover */
 }
 
-.link-absoluto {
-    position: absolute;
-    bottom: 0;   /* Cola no fundo do container */
-    right: 10px; /* Alinha à direita do container */
+.link-fixo img {
+    width: 60px;       /* Ajuste o tamanho do ícone aqui */
+    height: auto;
+    border-radius: 50%; /* Opcional: deixa o ícone redondo se for quadrado */
+    filter: drop-shadow(2px 4px 6px black); /* Dá um destaque contra o fundo escuro */
 }
 
+.link-fixo:hover {
+    transform: scale(1.1); /* Dá um leve zoom quando passa o mouse */
+}
 
 
 
