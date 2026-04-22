@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@300;400&display=swap');
 
-/* --- VARIÁVEIS ÚNICAS --- */
 :root {
     --laranja-principal: #FF8C00;
     --vermelho-principal: #D32F2F;
     --preto-fundo: #0A0A0A;
     --texto-claro: #F4F4F4;
     --cinza-cartao: #1A1A1A;
-    --border: #333;
 }
 
 * {
@@ -31,9 +29,6 @@ body {
     padding: 20px 8%;
     background-color: rgba(0, 0, 0, 0.9);
     border-bottom: 2px solid var(--vermelho-principal);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 .logotipo {
@@ -60,13 +55,10 @@ body {
     text-decoration: none;
     color: white;
     font-weight: 500;
-    transition: 0.3s;
 }
-
-/* Efeito corrigido para o link individual */
-.barra-navegacao ul li a:hover {
-    color: var(--laranja-principal);
-    cursor: pointer;
+.barra-navegacao:hover ul li a{
+    transform: scale(0.8);
+    cursor:pointer;
 }
 
 .botao-menu {
@@ -78,7 +70,8 @@ body {
 /* --- BANNER PRINCIPAL --- */
 .banner-principal {
     height: 90vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('fotomainsite.jpg');
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('fotomainsite.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -100,7 +93,7 @@ body {
     text-shadow: 2px 2px var(--vermelho-principal);
 }
 
-/* --- BOTÕES --- */
+/* --- BOTOES --- */
 .botao-primario, .botao-secundario {
     display: inline-block;
     padding: 15px 35px;
@@ -109,29 +102,28 @@ body {
     text-transform: uppercase;
     margin: 10px;
     border-radius: 3px;
-    transition: 0.3s;
 }
 
 .botao-primario {
     background-color: var(--laranja-principal);
     color: black;
 }
-
-.botao-primario:hover {
+.botao-primario:hover{
     background-color: var(--vermelho-principal);
-    color: white;
-    transform: scale(1.1);
+    color:white;
+    transform:scale(1.2);
+    cursor:pointer;
 }
 
 .botao-secundario {
     border: 2px solid var(--vermelho-principal);
     color: white;
 }
-
-.botao-secundario:hover {
-    background-color: var(--laranja-principal);
-    color: black;
-    transform: scale(1.1);
+.botao-secundario:hover{
+    background-color: var(--laranja-principal) ;
+    color:black;
+    transform:scale(1.2);
+    cursor:pointer;
 }
 
 /* --- SERVIÇOS --- */
@@ -150,24 +142,92 @@ body {
     border-left: 5px solid var(--laranja-principal);
 }
 
-/* --- HISTÓRIA DA ACADEMIA & TREINOS --- */
+.cartao-servico h3 {
+    color: var(--laranja-principal);
+    margin-bottom: 15px;
+    font-family: 'Oswald', sans-serif;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #000;
+    color: #555;
+}
+
+/* ---TREINAMENTO HTML --- */
+
+/* --- Historia da academia --- */
 .secao-historia {
     padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    background-color: var(--preto-fundo); /* Mantendo seu fundo original */
 }
 
 .container-historia {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: center;
+}
+
+.texto-historia h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
 .imagem-espaco img {
     width: 100%;
     border-radius: 8px;
-    border: 2px solid var(--laranja-principal);
+    border: 2px solid var(--laranja-principal); /* Usando sua variável */
 }
 
+/* --- ORIENTAÇÃO DE TREINO --- */
+
+.orientacao-compacta {
+    text-align: center; /* Alinha com o título principal */
+    margin-bottom: 40px; /* Dá espaço para os cards de treino */
+}
+
+.subtitulo-legado {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    color: var(--texto-claro);
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.metodo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    color: var(--laranja-principal); /* Cor de destaque da sua academia */
+    font-weight: 300;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+/* --- SEÇÃO DETALHADA DE TREINOS --- */
+.secao-treinos-detalhada {
+    padding: 60px 8%;
+    background-color: var(--preto-fundo);
+}
+
+.grupo-muscular {
+    margin-bottom: 50px;
+}
+
+.nome-grupo {
+    font-family: 'Oswald', sans-serif;
+    color: var(--texto-claro);
+    border-left: 5px solid var(--laranja-principal);
+    padding-left: 15px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+/* Grid de 4 quadrados */
 .grid-exercicios {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -180,36 +240,85 @@ body {
     background-color: var(--cinza-cartao);
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid var(--border);
-    transition: 0.3s;
+    border: 1px solid #333;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .card-exercicio:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05);
     border-color: var(--laranja-principal);
 }
 
 .card-exercicio img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    filter: grayscale(50%);
+    object-fit: cover; /* Faz a imagem preencher o quadrado sem distorcer */
+    filter: grayscale(50%); /* Deixa um estilo mais "dark" */
+    transition: 0.3s;
 }
 
 .card-exercicio:hover img {
     filter: grayscale(0%);
 }
 
-/* --- MATRICULE-SE (CARD) --- */
+.info-ex {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    text-align: center;
+}
+
+.info-ex h4 {
+    font-family: 'Oswald', sans-serif;
+    color: var(--laranja-principal);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* ---MATRICULE-SE --- */
+:root {
+    --primary: #ff8800;
+    --bg: #121212;
+    --card-bg: #1e1e1e;
+    --text: #ffffff;
+    --border: #333;
+}
+
+/* Ajuste do corpo para não quebrar o cabeçalho */
+body {
+    font-family: 'Oswald', sans-serif; /* Usando a fonte do seu site */
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+}
+
+/* Container para centralizar apenas o formulário, não a página toda */
 .card {
-    background: var(--cinza-cartao);
+    background: var(--card-bg);
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     max-width: 600px;
-    width: 90%;
-    margin: 50px auto;
+    width: 90%; /* Responsivo para celular */
+    margin: 50px auto; /* Centraliza o quadrado e dá distância do topo */
 }
+
+h2 { text-align: center; color: var(--primary); text-transform: uppercase; }
+
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+
+legend { color: var(--primary); padding: 0 10px; font-weight: bold; text-transform: uppercase;}
+
+.campo { margin-bottom: 15px; display: flex; flex-direction: column; }
+.campo label { margin-bottom: 5px; font-size: 0.9rem; }
 
 input[type="text"], input[type="email"], input[type="tel"] {
     width: 100%;
@@ -218,25 +327,90 @@ input[type="text"], input[type="email"], input[type="tel"] {
     border: 1px solid var(--border);
     border-radius: 5px;
     color: #fff;
-    margin-top: 5px;
+    outline: none;
+}
+
+input:focus { border-color: var(--primary); }
+
+.container-planos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.card-plano input[type="radio"] { display: none; }
+
+.card-conteudo {
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+    height: 100%;
+}
+
+.card-conteudo h1 { font-size: 1.5rem; margin: 5px 0; }
+.card-conteudo ul { padding: 0; list-style: none; font-size: 0.8rem; text-align: left; }
+
+.card-plano input[type="radio"]:checked + .card-conteudo {
+    border-color: var(--primary);
+    background: rgba(255, 136, 0, 0.1);
 }
 
 button[type="submit"] {
     width: 100%;
     padding: 15px;
-    background: var(--laranja-principal);
+    background: var(--primary);
     border: none;
     border-radius: 8px;
     font-weight: bold;
+    font-family: 'Oswald', sans-serif;
     cursor: pointer;
+    color: #000;
     font-size: 1.1rem;
     text-transform: uppercase;
     transition: 0.3s;
 }
 
-/* --- HISTÓRIA FISICULTURISMO (LENDAS) --- */
+button[type="submit"]:hover {
+    background: #e67a00;
+    transform: translateY(-2px);
+}
+
+/* --- HISTÓRIA FISICULTURISMO --- */
 .conteudo-historia {
     padding: 100px 8% 50px;
+    background-color: #0A0A0A;
+}
+
+.texto-principal {
+    max-width: 800px;
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.texto-principal h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.texto-principal p {
+    color: #ccc;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* --- GRID DE ATLETAS --- */
+.melhores-do-mundo {
+    text-align: center;
+}
+
+.melhores-do-mundo h2 {
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 40px;
 }
 
 .grid-atletas {
@@ -252,8 +426,8 @@ button[type="submit"] {
     height: 450px;
     border-radius: 10px;
     overflow: hidden;
-    border: 2px solid var(--border);
-    transition: 0.4s;
+    border: 2px solid #333;
+    transition: 0.4s ease;
 }
 
 .card-atleta img {
@@ -261,6 +435,7 @@ button[type="submit"] {
     height: 100%;
     object-fit: cover;
     filter: grayscale(100%);
+    transition: 0.5s;
 }
 
 .card-atleta:hover {
@@ -270,12 +445,27 @@ button[type="submit"] {
 
 .card-atleta:hover img {
     filter: grayscale(0%);
+    transform: scale(1.1);
 }
 
-footer {
-    text-align: center;
-    padding: 40px;
-    background: #000;
-    color: #555;
+.info-atleta {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    text-align: left;
+}
+
+.info-atleta h3 {
+    font-family: 'Oswald', sans-serif;
+    color: #fff;
+    margin: 0;
+}
+
+.info-atleta p {
+    color: var(--laranja-principal);
+    font-weight: bold;
+    margin-top: 5px;
 }
 
