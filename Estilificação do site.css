@@ -468,6 +468,69 @@ button[type="submit"]:hover {
     margin-bottom: 15px;
 }
 
+
+/* --- TIME LINE ---*/
+.card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 600px;
+            width: 100%;
+        }
+.timeline {
+            position: relative;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0;
+            list-style: none;
+        }
+
+.timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: #ccc;
+            left: 20px;
+        }
+
+.timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 50px;
+        }
+
+.timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #ffa500;
+            border: 2px solid #ffa500;
+            border-radius: 50%;
+            left: 12px;
+            top: 0;
+            z-index: 1;
+        }
+
+.timeline-content {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+.timeline-date {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+
+
+
 /* --- GRID DE ATLETAS --- */
 .melhores-do-mundo {
     text-align: center;
