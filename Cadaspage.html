@@ -21,76 +21,73 @@
         </nav>
     </header>
 
-    <div class="card">
-        <h2>Matricule-se</h2>
-        <form id="meuFormulario" action="enviar-cadastro" method="POST">
-            <fieldset>
-                <legend>Informações do Aluno</legend>
-                <div class="campo">
-                    <label for="nome">Nome Completo</label>
-                    <input type="text" id="nome" name="nome" placeholder="Exemplo: José Miguel" required>
-                </div>
-                <div class="campo">
-                    <label for="cpf">CPF</label>
-                    <input type="text" id="cpf" name="cpf" placeholder="Exemplo: 000.000.000-00" required>
-                </div>
-                <div class="campo">
-                    <label for="telefone">Telefone</label>
-                    <input type="tel" id="telefone" name="telefone" placeholder="Exemplo: (00) 00000-0000" required>
-                </div> 
-                <div class="campo">
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="Exemplo: seu@email.com" required>
-                </div>
-            </fieldset> 
-          
-            <fieldset>
-                <legend>Escolha seu Plano</legend>
-                <div class="container-planos">
-                    <label class="card-plano">
-                        <input type="radio" name="plano" value="Mensal" checked>
-                        <div class="card-conteudo">
-                            <h1>Black</h1>
-                            <h5>Mensal</h5>
-                            <p>R$ 89,90</p>
-                            <ul>
-                                <li>✓ Sem fidelidade</li>
-                                <li>✓ Acesso a todas as unidades</li>
-                                <li>✓ Camiseta exclusiva</li>
-                                <li>✓ App incluso</li>
-                            </ul>
-                        </div>
-                    </label>
-                    <label class="card-plano">
-                        <input type="radio" name="plano" value="Anual">
-                        <div class="card-conteudo">
-                            <h1>Premium</h1>
-                            <h5>Anual</h5>
-                            <p>R$ 69,90/Mês</p>
-                            <ul>
-                                <li>✓ Sem fidelidade</li>
-                                <li>✓ Acesso a todas as unidades</li>
-                                <li>✓ Camiseta exclusiva</li>
-                                <li>✓ App incluso</li>
-                                <li>✓ Leve 7 amigos p/ mês</li>
-                                <li>✓ 4 pré-treinos p/ mês</li>
-                                <li>✓ Brindes exclusivos</li>
-                                <li>✓ Spotify incluso</li>
-                            </ul>
-                        </div>
-                    </label>
-                </div>
-            </fieldset>      
+    <main class="area-cadastro">
+        <div class="card-matricula">
+            <h2>Matricule-se</h2>
+            <form id="meuFormulario">
+                <fieldset>
+                    <legend>Informações do Aluno</legend>
+                    <div class="campo">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Exemplo: José Miguel" required>
+                    </div>
+                    <div class="campo">
+                        <label for="cpf">CPF</label>
+                        <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+                    </div>
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                    </div> 
+                    <div class="campo">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                </fieldset> 
+              
+                <fieldset>
+                    <legend>Escolha seu Plano</legend>
+                    <div class="container-planos">
+                        <label class="card-plano">
+                            <input type="radio" name="plano" value="Black" checked>
+                            <div class="card-conteudo">
+                                <h3>Black</h3>
+                                <span class="tipo-plano">Mensal</span>
+                                <p class="preco">R$ 89,90</p>
+                                <ul>
+                                    <li>✓ Sem fidelidade</li>
+                                    <li>✓ Acesso Total</li>
+                                    <li>✓ App Nexus</li>
+                                </ul>
+                            </div>
+                        </label>
+                        <label class="card-plano">
+                            <input type="radio" name="plano" value="Premium">
+                            <div class="card-conteudo">
+                                <h3>Premium</h3>
+                                <span class="tipo-plano">Anual</span>
+                                <p class="preco">R$ 69,90/mês</p>
+                                <ul>
+                                    <li>✓ Camiseta Exclusiva</li>
+                                    <li>✓ Leve 7 amigos/mês</li>
+                                    <li>✓ Brindes VIP</li>
+                                    <li>✓ Spotify incluso</li>
+                                </ul>
+                            </div>
+                        </label>
+                    </div>
+                </fieldset>      
 
-            <button type="submit">Concluir cadastro</button>
-        </form>
-    </div>
+                <button type="submit" class="botao-primario btn-full">Concluir cadastro</button>
+            </form>
+        </div>
+    </main>
 
     <div id="modalSucesso" class="modal-oculto">
         <div class="modal-conteudo">
-            <h3>Parabéns!</h3>
-            <p>Seu cadastro na <strong>Nexus Legacy</strong> foi concluído com sucesso.</p>
-            <button type="button" onclick="fecharModal()">Ótimo!</button>
+            <h3 class="titulo-modal">BEM-VINDO AO TIME!</h3>
+            <p>Seu cadastro na <strong>Nexus Legacy</strong> foi concluído.</p>
+            <button type="button" onclick="fecharModal()" class="botao-primario">VAMOS TREINAR!</button>
         </div>
     </div>
 
@@ -98,20 +95,20 @@
         const formulario = document.getElementById('meuFormulario');
         const modal = document.getElementById('modalSucesso');
 
-        // O evento" acontece quando você clica no seu botão
         formulario.addEventListener('submit', function(event) {
-            event.preventDefault(); // Impede a página de recarregar ou mudar
-            modal.style.display = 'flex'; // Mostra o pop-up na tela
+            event.preventDefault();
+            modal.style.display = 'flex';
         });
 
-        // Função para o botão do pop-up fechar o aviso
         function fecharModal() {
             modal.style.display = 'none';
             formulario.reset(); 
+            window.location.href = "index.html";
         }
     </script>
-      <a href="historia.html" class="link-fixo">
-        <img src="seets/icone-preto.png">
+
+    <a href="historia.html" class="link-fixo">
+        <img src="seets/icone-preto.png" alt="História">
     </a>
 </body>
 </html>
