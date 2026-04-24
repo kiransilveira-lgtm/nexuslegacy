@@ -311,158 +311,136 @@ footer {
 
 /* ---MATRICULE-SE  HTML--- */
 
-.area-cadastro {
-    padding: 60px 5%;
-    display: flex;
-    justify-content: center;
-}
+/* --- ESTILIZAÇÃO MATRÍCULA (NEXUS LEGACY STYLE) --- */
 
-.card-matricula {
+.card {
     background: var(--cinza-cartao);
-    padding: 40px;
+    padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.8);
-    max-width: 750px;
-    width: 100%;
-    border-top: 4px solid var(--laranja-principal);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 600px;
+    width: 90%; 
+    margin: 50px auto; 
+    border-top: 3px solid var(--laranja-principal);
 }
 
-.card-matricula h2 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 30px;
+.card h2 { 
+    text-align: center; 
+    color: var(--texto-claro); 
     text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 20px;
 }
 
-.card-matricula fieldset {
+fieldset {
     border: 1px solid #333;
     border-radius: 8px;
-    margin-bottom: 25px;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding: 15px;
 }
 
-.card-matricula legend {
-    color: var(--laranja-principal);
-    font-family: 'Oswald', sans-serif;
-    padding: 0 10px;
+legend { 
+    color: var(--laranja-principal); 
+    padding: 0 10px; 
+    font-weight: bold; 
     text-transform: uppercase;
-    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
 }
 
-.campo {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-}
+.campo { margin-bottom: 15px; display: flex; flex-direction: column; }
+.campo label { margin-bottom: 5px; font-size: 0.9rem; color: #ccc; }
 
-.campo label {
-    font-size: 0.85rem;
-    margin-bottom: 5px;
-    color: #aaa;
-}
-
-.campo input {
+input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 12px;
     background: #0a0a0a;
     border: 1px solid #444;
-    padding: 12px;
     border-radius: 5px;
-    color: white;
-    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    outline: none;
     transition: 0.3s;
 }
 
-.campo input:focus {
-    border-color: var(--laranja-principal);
-    outline: none;
+input:focus { 
+    border-color: var(--laranja-principal); 
 }
 
-/* Planos */
 .container-planos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
 }
 
-.card-plano input[type="radio"] {
-    display: none;
-}
+.card-plano input[type="radio"] { display: none; }
 
 .card-conteudo {
-    background: #0f0f0f;
     border: 2px solid #333;
-    padding: 20px;
+    background: #0f0f0f;
     border-radius: 10px;
+    padding: 15px;
     text-align: center;
-    cursor: pointer;
     transition: 0.3s;
+    cursor: pointer;
     height: 100%;
 }
 
-.card-conteudo h3 {
+.card-conteudo h1 { 
+    font-size: 1.5rem; 
+    margin: 5px 0; 
     font-family: 'Oswald', sans-serif;
     color: var(--laranja-principal);
-    font-size: 1.8rem;
-    margin-bottom: 5px;
 }
 
-.tipo-plano {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    color: #777;
-}
-
-.preco {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin: 15px 0;
-}
-
-.card-conteudo ul {
-    list-style: none;
-    text-align: left;
-    font-size: 0.85rem;
-    padding: 0;
+.card-conteudo ul { 
+    padding: 0; 
+    list-style: none; 
+    font-size: 0.8rem; 
+    text-align: left; 
+    color: #bbb;
 }
 
 .card-plano input[type="radio"]:checked + .card-conteudo {
     border-color: var(--laranja-principal);
-    background: rgba(255, 140, 0, 0.05);
-    transform: translateY(-5px);
+    background: rgba(255, 140, 0, 0.1);
 }
 
-.btn-full {
-    width: 100%;
-    border: none;
-    cursor: pointer;
-}
-
-/* Modal Estilizado */
+/* --- MODAL (POP-UP) --- */
 .modal-oculto {
-    display: none;
+    display: none; 
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.85);
     justify-content: center;
     align-items: center;
-    z-index: 10000;
+    z-index: 1000;
 }
 
 .modal-conteudo {
     background: var(--cinza-cartao);
-    padding: 40px;
-    border-radius: 10px;
+    padding: 30px;
     text-align: center;
+    color: var(--texto-claro);
+    border-radius: 8px;
     border: 2px solid var(--laranja-principal);
-    max-width: 400px;
 }
 
-.titulo-modal {
+.modal-conteudo button {
+    margin-top: 15px;
+    padding: 10px 25px;
+    cursor: pointer;
+    background: var(--laranja-principal);
+    color: #000;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
     font-family: 'Oswald', sans-serif;
-    color: var(--laranja-principal);
-    font-size: 2rem;
-    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.modal-conteudo button:hover {
+    background: var(--vermelho-principal);
+    color: white;
 }
 
 
