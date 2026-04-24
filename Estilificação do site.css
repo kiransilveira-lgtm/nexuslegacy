@@ -307,23 +307,6 @@ footer {
 
 
 /* ---MATRICULE-SE  HTML--- */
-:root {
-    --primary: #ff8800;
-    --bg: #121212;
-    --card-bg: #1e1e1e;
-    --text: #ffffff;
-    --border: #333;
-}
-
-
-body {
-    font-family: 'Oswald', sans-serif; 
-    background-color: var(--bg);
-    color: var(--text);
-    margin: 0;
-    padding: 0;
-}
-
 
 .card {
     background: var(--card-bg);
