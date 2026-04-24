@@ -470,6 +470,10 @@ button[type="submit"]:hover {
 
 
 /* --- TIME LINE ---*/
+.temp{
+    liner-padding: 0px:
+    font-size: 1.1rem;
+}
 .card {
             background: var(--card-bg);
             padding: 30px;
