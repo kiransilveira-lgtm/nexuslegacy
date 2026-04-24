@@ -6,7 +6,6 @@
     --preto-fundo: #0A0A0A;
     --texto-claro: #F4F4F4;
     --cinza-cartao: #1A1A1A;
-    /* Adicionando apelidos para compatibilidade com o que você escreveu depois */
     --primary: var(--laranja-principal);
     --card-bg: var(--cinza-cartao);
     --border: #333;
