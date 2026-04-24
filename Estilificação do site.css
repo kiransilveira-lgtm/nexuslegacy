@@ -335,10 +335,16 @@ footer {
 }
 
 
-/* --- TIME LINE ---*/
+/* --- TIME LINE --- */
 .temp {
-    padding: 20px 0;
-    font-size: 1.1rem;
+    padding: 40px 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline {
+    position: relative; /* Essencial para prender a linha e as bolinhas */
+    padding-left: 40px;  /* Espaço para a linha vertical não atropelar o texto */
 }
 
 .timeline::before {
@@ -347,8 +353,13 @@ footer {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: var(--laranja-principal); /* Use a variável */
-    left: 20px;
+    background: var(--laranja-principal);
+    left: 20px; /* Alinha a linha vertical */
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
 }
 
 .timeline-item::after {
@@ -357,19 +368,34 @@ footer {
     width: 16px;
     height: 16px;
     background: var(--laranja-principal);
-    border: 2px solid var(--preto-fundo);
+    border: 3px solid var(--preto-fundo);
     border-radius: 50%;
-    left: 12px;
+    left: -26px; /* Ajusta a bolinha exatamente em cima da linha */
     top: 5px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .timeline-content {
-    background: var(--cinza-cartao); /* Fundo escuro para combinar com o site */
-    padding: 15px;
-    border-radius: 6px;
+    background: var(--cinza-cartao);
+    padding: 20px;
+    border-radius: 8px;
     border: 1px solid #333;
     color: var(--texto-claro);
+    transition: 0.3s;
+}
+
+.timeline-content:hover {
+    border-color: var(--laranja-principal);
+}
+
+.timeline-date {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    color: var(--laranja-principal);
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
 }
 
 
