@@ -1,3 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@300;400&display=swap');
+
+:root {
+    --laranja-principal: #FF8C00;
+    --vermelho-principal: #D32F2F;
+    --preto-fundo: #0A0A0A;
+    --texto-claro: #F4F4F4;
+    --cinza-cartao: #1A1A1A;
+    /* Adicionando apelidos para compatibilidade com o que você escreveu depois */
+    --primary: var(--laranja-principal);
+    --card-bg: var(--cinza-cartao);
+    --border: #333;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--preto-fundo);
+    color: var(--texto-claro);
+    line-height: 1.6;
+}
+
+/* --- BARRA DE NAVEGAÇÃO --- */
+.barra-navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 2px solid var(--vermelho-principal);
+}
+
+.logotipo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logotipo span {
+    color: var(--laranja-principal);
+}
+
+.barra-navegacao ul {
+    display: flex;
+    list-style: none;
+}
+
+.barra-navegacao ul li {
+    margin-left: 30px;
+}
+
+.barra-navegacao ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+.barra-navegacao:hover ul li a{
+    transform: scale(0.8);
+    cursor:pointer;
+}
+
+.botao-menu {
+    background: var(--vermelho-principal);
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+
+
 /* ---MATRICULE-SE  HTML--- */
 
 /* --- ESTILIZAÇÃO MATRÍCULA (NEXUS LEGACY STYLE) --- */
