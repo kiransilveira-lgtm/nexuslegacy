@@ -69,7 +69,25 @@ body {
     border-radius: 5px;
 }
 
+/*--- ICONE DO SITE CANTO---*/
 
+.link-fixo {
+    position: fixed;   
+    bottom: 20px;     
+    right: 20px;       
+    z-index: 9999;     
+}
+
+.link-fixo img {
+    width: 60px;       
+    height: auto;
+    border-radius: 50%; 
+}
+
+.link-fixo:hover {
+    cursor:pointer;
+    transform: scale(1.2); 
+}
 
 /* ---MATRICULE-SE  HTML--- */
 
