@@ -183,6 +183,16 @@ input:focus {
     border-color: var(--laranja-principal);
     background: rgba(255, 140, 0, 0.1);
 }
+/*--- Botão do concluase ---*/
+.botao-primario{
+    padding:o;
+    font-size: 1.3rem;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+
+
 
 /* --- Popape na tela --- */
 .modal-oculto {
