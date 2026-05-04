@@ -21,7 +21,7 @@ IDENTIDADE_HYDRALYNX = (
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('nexusia.html')
 
 @app.route('/perguntar', methods=['POST'])
 def perguntar():
