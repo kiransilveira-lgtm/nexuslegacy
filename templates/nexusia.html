@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MyCoach | Nexus Legacy</title>
+    
+</head>
+<body>
+
+    <header class="barra-navegacao">
+        <div class="logotipo">NEXUS<span>LEGACY</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="nexusia.html">MyCoach</a></li>
+                <li><a href="treinos.html">Treinos</a></li>
+                <li><a href="Cadaspage.html" class="botao-menu">Matricule-se</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="chat-container">
+        <div class="chat-header">
+            <h2>MyCoach <span>Legacy</span> IA</h2>
+        </div>
+
+        <div id="chat-messages">
+            <div class="mensagem bot-message">
+                Pronto para forjar sua melhor versão? Como posso ajudar hoje?
+            </div>
+            <div id="typing-indicator" class="typing">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="user-input" placeholder="Pergunte sobre treinos ou dieta...">
+            <button id="btn-enviar">FORJAR</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Nexus Legacy Gym - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const input = document.getElementById('user-input');
+        const btn = document.getElementById('btn-enviar');
+        const chatMessages = document.getElementById('chat-messages');
+        const typingIndicator = document.getElementById('typing-indicator');
+
+        async function enviarMensagem() {
+            const mensagem = input.value.trim();
+            if (!mensagem) return;
+
+            adicionarMensagem(mensagem, 'user-message');
+            input.value = '';
+
+            // Mostrar indicador de digitação e mover para o final
+            typingIndicator.style.display = 'block';
+            chatMessages.appendChild(typingIndicator); 
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            try {
+                const response = await fetch('/perguntar', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ mensagem: mensagem })
+                });
+
+                const dados = await response.json();
+                
+                typingIndicator.style.display = 'none'; // Esconde indicador
+                adicionarMensagem(dados.resposta, 'bot-message');
+            } catch (error) {
+                typingIndicator.style.display = 'none';
+                adicionarMensagem("Erro técnico na NexusIA.", 'bot-message');
+            }
+        }
+
+        function adicionarMensagem(texto, classe) {
+            const div = document.createElement('div');
+            div.className = `mensagem ${classe}`;
+            div.innerText = texto;
+            // Insere antes do indicador para ele sempre ficar por último enquanto ativo
+            chatMessages.insertBefore(div, typingIndicator);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        btn.addEventListener('click', enviarMensagem);
+        input.addEventListener('keypress', (e) => { if (e.key === 'Enter') enviarMensagem(); });
+    </script>
+</body>
+</html>
