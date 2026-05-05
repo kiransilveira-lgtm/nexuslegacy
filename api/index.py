@@ -2,12 +2,12 @@ from flask import Flask, render_template, request, jsonify
 from openai import OpenAI 
 import os
 
-app = Flask(__name__, 
-            template_folder='../templates', 
-            static_folder='../static')
 
-    app.template_folder = os.path.join(os.getcwd(), 'templates')
-    app.static_folder = os.path.join(os.getcwd(), 'static')
+base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+app = Flask(__name__, 
+            template_folder=os.path.join(base_dir, 'templates'), 
+            static_folder=os.path.join(base_dir, 'static'))
 
 IDENTIDADE_HYDRALYNX = (
     "Sua linguagem padrão deve ser o Português Brasileiro. Use emojis como tópicos e fale de forma fluida e humana. "
@@ -33,10 +33,9 @@ def treinos():
 def cadastro():
     return render_template('Cadaspage.html')
 
-@app.rote('/historia')
+@app.route('/historia')
 def historia():
     return render_template('historia.html')
-
 
 @app.route('/perguntar', methods=['POST'])
 def perguntar():
