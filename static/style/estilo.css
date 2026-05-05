@@ -73,7 +73,7 @@ body {
 .banner-principal {
     height: 90vh;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                url('seets/fotomainsite.jpg');
+                url('/static/seets/fotomainsite.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
