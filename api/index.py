@@ -6,7 +6,6 @@ app = Flask(__name__,
             template_folder='../templates', 
             static_folder='../static')
 
-if not os.path.exists(os.path.join(os.path.dirname(__file__), '../templates')):
     app.template_folder = os.path.join(os.getcwd(), 'templates')
     app.static_folder = os.path.join(os.getcwd(), 'static')
 
