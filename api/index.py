@@ -1,13 +1,11 @@
-from flask import Flask, render_template, request, jsonify  
-from openai import OpenAI 
 import os
+from flask import Flask, render_template, request, jsonify
+from openai import OpenAI
 
-base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
 app = Flask(__name__, 
-            template_folder=os.path.join(base_dir, 'templates'), 
-            static_folder=os.path.join(base_dir, 'static'),
-            static_url_path='/static')
+            template_folder="../templates", 
+            static_folder="../static")
 
 IDENTIDADE_HYDRALYNX = (
     "Sua linguagem padrão deve ser o Português Brasileiro. Use emojis como tópicos e fale de forma fluida e humana. "
