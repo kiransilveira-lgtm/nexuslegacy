@@ -48,7 +48,7 @@ def perguntar():
         pergunta = dados.get('mensagem')
 
         response = client.chat.completions.create(
-            model="openai/gpt-3.5-turbo", 
+            model="nvidia/nemotron-nano-12b-v2-vl:free", 
             messages=[
                 {"role": "system", "content": IDENTIDADE_HYDRALYNX},
                 {"role": "user", "content": pergunta}
