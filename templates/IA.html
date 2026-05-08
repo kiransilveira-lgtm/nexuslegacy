@@ -6,10 +6,9 @@
     <link rel="stylesheet" href="/static/style/nexusia.css">
     <link rel="icon" type="image/jpeg" href="/static/seets/Icone-site.jpeg">
     <title>MyCoach | Nexus Legacy</title>
-    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-
     <header class="barra-navegacao">
         <div class="logotipo">NEXUS<span>LEGACY</span></div>
       <nav>
@@ -21,12 +20,10 @@
          </ul>
        </nav>
     </header>
-
     <main class="chat-container">
         <div class="chat-header">
             <h2>MyCoach <span>Legacy</span> IA</h2>
         </div>
-
         <div id="chat-messages">
             <div class="mensagem bot-message">
                 Pronto para forjar sua melhor versão? Como posso ajudar hoje?
@@ -37,17 +34,14 @@
                 <span class="dot"></span>
             </div>
         </div>
-
         <div class="chat-input-area">
             <input type="text" id="user-input" placeholder="Pergunte sobre treinos ou dieta...">
             <button id="btn-enviar">FORJAR</button>
         </div>
     </main>
-
     <footer>
         <p>&copy; 2026 Nexus Legacy Gym - Todos os direitos reservados.</p>
     </footer>
-
     <script>
         const input = document.getElementById('user-input');
         const btn = document.getElementById('btn-enviar');
@@ -57,25 +51,19 @@
         async function enviarMensagem() {
             const mensagem = input.value.trim();
             if (!mensagem) return;
-
             adicionarMensagem(mensagem, 'user-message');
             input.value = '';
-
-
             typingIndicator.style.display = 'block';
             chatMessages.appendChild(typingIndicator); 
             chatMessages.scrollTop = chatMessages.scrollHeight;
-
             try {
                 const response = await fetch('/perguntar', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ mensagem: mensagem })
                 });
-
                 const dados = await response.json();
-                
-                typingIndicator.style.display = 'none'; // Esconde indicador
+                typingIndicator.style.display = 'none';
                 adicionarMensagem(dados.resposta, 'bot-message');
             } catch (error) {
                 typingIndicator.style.display = 'none';
@@ -86,7 +74,11 @@
         function adicionarMensagem(texto, classe) {
             const div = document.createElement('div');
             div.className = `mensagem ${classe}`;
-            div.innerText = texto;
+            if (classe === 'bot-message') {
+                div.innerHTML = marked.parse(texto);
+            } else {
+                div.innerText = texto;
+            }
             chatMessages.insertBefore(div, typingIndicator);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
